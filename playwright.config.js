@@ -1,0 +1,21 @@
+// @ts-check
+import { defineConfig, devices } from '@playwright/test';
+import { report } from 'node:process';
+
+
+const config=({
+  testDir: './tests',
+  reporter : 'html',
+  timeout: 40*1000,
+  expect : {
+    timeout: 50*1000
+  },
+
+  use: {
+  browserName : 'chromium',
+  headless : false
+  },
+
+});
+
+module.exports=config;
