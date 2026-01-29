@@ -29,4 +29,35 @@ loginLoactor.click()
 
 await page.locator('#Email').fill("vinodbhusal0@gmail.com");
 await page.locator('#Password').fill("mypassword");
+await page.locator(".login-button").click();
+
+await page.locator('.list li a').nth(3).click();
+
+
+// all gives the list of webelements
+ const listofClothes= await page.locator('.product-title a').all();
+
+// gives the text of all item list
+const listofTex= await page.locator('.product-title a').allTextContents();
+console.log(listofTex);
+console.log(listofClothes.length);
+
+//   for (const vinod of listofClothes) {
+//         if (await vinod.textContent() === 'Blue Jeans') {
+//             await vinod.click();
+//             break;
+//         }
+//     }
+    //wait for all api call in network tab to complete 
+    await page.waitForLoadState('networkidle');
+
+     //another way without use of forloop
+   await page.locator('.product-title a').filter({hasText:'Blue Jeans'}).click();
+
+const title=  page.locator('[itemprop="description"] p');
+console.log(title.textContent());
+
+await expect(title).toHaveText('Stylish Jeans');
+
+//await page.pause();
 });
