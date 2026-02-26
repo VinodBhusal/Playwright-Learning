@@ -1,0 +1,10 @@
+Parent to Child child
+// 1. browser
+// 2.bronwers =context
+// 2.page nikala
+
+// 4. Shift-> const [newpage]= promise.all
+// {
+//     wait for eventt('page')
+//     click();
+// }

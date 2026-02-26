@@ -5,7 +5,6 @@ test('my fisrt test case', async({browser}) =>
 {
     const context=await browser.newContext();
     const page = await context.newPage();
-
     await page.goto("https://www.kinship.com/");
     
 });
@@ -17,7 +16,7 @@ console.log(await page.title());
 
 });
 
-test.only('3rd testCase', async({browser,page})=>{
+test('3rd testCase', async({browser,page})=>{
  //open page
 await page.goto("https://demowebshop.tricentis.com/");
 //Page has a title
@@ -57,7 +56,7 @@ console.log(listofClothes.length);
 const title=  page.locator('[itemprop="description"] p');
 console.log(title.textContent());
 
-await expect(title).toHaveText('Stylish Jeans');
+ await expect(title).toHaveText('Stylish Jeans');
 
 //await page.pause();
 });
